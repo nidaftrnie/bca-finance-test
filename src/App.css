@@ -500,3 +500,57 @@ button:focus-visible, select:focus-visible, input:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
 }
+
+/* ===== PERSONAL WATERMARK ===== */
+.jlk-watermark {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  margin-top: 28px;
+  padding: 0 4px 8px;
+
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  color: #66758a;
+  opacity: 0.8;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.jlk-watermark span {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  font-style: normal;
+  color: #94a0af;
+  letter-spacing: 0.03em;
+}
+
+.jlk-watermark::after {
+  content: "";
+  width: 32px;
+  height: 2px;
+  margin-left: 5px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #0033a0,
+    #daa11c
+  );
+}
+
+@media (max-width: 680px) {
+  .jlk-watermark {
+    justify-content: center;
+    margin-top: 22px;
+    padding-bottom: 4px;
+    font-size: 11px;
+  }
+}

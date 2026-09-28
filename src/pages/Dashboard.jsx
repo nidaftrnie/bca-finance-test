@@ -29,7 +29,7 @@ export default function Dashboard() {
   const handleReject = (id) =>
     setApplications((apps) =>
       apps.map((app) => (app.id === id ? { ...app, status: "Rejected" } : app)),
-    ); 
+    );
   const handleESign = (id) =>
     setApplications((apps) =>
       apps.map((app) =>
@@ -191,6 +191,9 @@ export default function Dashboard() {
           onRequestAction={requestAction}
         />
       </main>
+      <div className="jlk-watermark">
+        <span>by</span> Nida Fitrianie
+      </div>
 
       {/* MODAL 1: DETAIL APLIKASI (Dengan Tombol Reject) */}
       {selectedApp && (
